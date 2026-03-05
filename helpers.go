@@ -127,3 +127,25 @@ func status_Text(code int) string {
 		return "OK"
 	}
 }
+
+func build_Pager_Simple(page int, totalPages int) string {
+	var b strings.Builder
+
+	b.WriteString(`<div style="margin-top:12px;">`)
+	b.WriteString(fmt.Sprintf(`<span>Página %d de %d</span> `, page, totalPages))
+
+	if page > 1 {
+		b.WriteString(fmt.Sprintf(` <a href="/?page=%d">« Anterior</a> `, page-1))
+	} else {
+		b.WriteString(` <span style="opacity:0.5;">« Anterior</span> `)
+	}
+
+	if page < totalPages {
+		b.WriteString(fmt.Sprintf(` <a href="/?page=%d">Siguiente »</a> `, page+1))
+	} else {
+		b.WriteString(` <span style="opacity:0.5;">Siguiente »</span> `)
+	}
+
+	b.WriteString(`</div>`)
+	return b.String()
+}
