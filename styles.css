@@ -1,0 +1,12 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url('https://img.freepik.com/premium-photo/generic-plasma-tv-3d-design_641503-249883.jpg');
+  background-size: cover;     
+  background-position: center; 
+  background-repeat: no-repeat; 
+}

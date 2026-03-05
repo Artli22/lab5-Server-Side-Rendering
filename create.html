@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Crear serie</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Crear serie</h1>
+
+  <form method="POST" action="/create">
+    <label>Nombre:
+      <input type="text" name="series_name" required>
+    </label>
+    <br><br>
+
+    <label>Episodio actual:
+      <input type="number" name="current_episode" min="1" value="1" required>
+    </label>
+    <br><br>
+
+    <label>Total episodios:
+      <input type="number" name="total_episodes" min="1" required>
+    </label>
+    <br><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p><a href="/">Volver</a></p>
+</body>
+</html>
