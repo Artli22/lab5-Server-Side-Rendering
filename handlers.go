@@ -200,8 +200,14 @@ func handle_Home(conn net.Conn, db *sql.DB, q url.Values) {
 		var total int
 		_ = rows.Scan(&id, &name, &current, &total)
 
+		rowClass := ""
+
+		if current == total {
+			rowClass = "finished"
+		}
+
 		string_builder.WriteString(fmt.Sprintf(
-			`<tr>
+			`<tr class="%s">
 				<td>%d</td>
 				<td>%s</td>
 				<td>%d</td>
@@ -212,7 +218,7 @@ func handle_Home(conn net.Conn, db *sql.DB, q url.Values) {
 					<button onclick="deleteSeries(%d)">Eliminar</button>
 				</td>
 			</tr>`+"\n",
-			id, htmlEscape(name), current, total, id, id, id,
+			rowClass, id, htmlEscape(name), current, total, id, id, id,
 		))
 	}
 

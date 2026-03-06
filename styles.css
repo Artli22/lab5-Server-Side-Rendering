@@ -10,3 +10,9 @@ body {
   background-position: center; 
   background-repeat: no-repeat; 
 }
+
+.finished {
+    font-weight: bold;
+    color: blue;
+    background-color: orange;
+}
