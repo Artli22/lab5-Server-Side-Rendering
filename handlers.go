@@ -84,6 +84,10 @@ func get(conn net.Conn, db *sql.DB) {
 		serve_static(conn, "styles.css", "text/css")
 		return
 
+	case "/favicon.png":
+		serve_static(conn, "favicon.png", "image/png")
+		return
+
 	default:
 		write_HTML(conn, 404, "<html><body><h1>404 Not Found</h1></body></html>")
 		return
